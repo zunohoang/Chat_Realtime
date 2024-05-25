@@ -18,7 +18,7 @@ var listUserOnline = [
 ];
 var toUser = null;
 function connectWs() {
-    const sock = new SockJS('http://localhost:8080/ws');
+    const sock = new SockJS('/ws');
     stompClient = Stomp.over(sock);
     stompClient.connect({
         Authorization: "Bearer " + localStorage.getItem("token")

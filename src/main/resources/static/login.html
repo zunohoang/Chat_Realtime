@@ -29,7 +29,7 @@
         function login() {
             var username = document.querySelector('input[name="username"]').value;
             var password = document.querySelector('input[name="password"]').value;
-            fetch('http://localhost:8080/login', {
+            fetch('/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

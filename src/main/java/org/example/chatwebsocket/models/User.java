@@ -29,7 +29,6 @@ public class User {
 
     @Column(name = "role")
     private String role;
-
     @Column(name = "status")
     private String status;
 }
