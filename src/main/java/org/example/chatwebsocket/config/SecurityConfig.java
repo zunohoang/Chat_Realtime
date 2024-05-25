@@ -30,6 +30,7 @@ public class SecurityConfig {
                         authorizeRequests
                                 .requestMatchers("/ws/**", "/login").permitAll()
                                 .requestMatchers("/api/v1/**").hasAnyAuthority("ROLE_USER")
+                                .anyRequest().permitAll()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
