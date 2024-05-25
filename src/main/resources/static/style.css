@@ -1,0 +1,56 @@
+body {
+    margin: 0px;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+.username_box,
+.password_box {
+    text-align: center;
+}
+
+.username_box input,
+.password_box input {
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form_login {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 auto;
+    width: 300px;
+    max-width: 100%;
+}
+
+.login_button button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+}
