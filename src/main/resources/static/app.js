@@ -1,3 +1,8 @@
+if(localStorage.getItem("token") == null) {
+    window.location.href = "login.html";
+}
+
+
 document.getElementsByClassName("username_now")[0].innerHTML = localStorage.getItem("token");
 
 var stompClient = null;
