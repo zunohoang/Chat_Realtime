@@ -1,38 +1,75 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 
 <head>
     <title>Hello WebSocket</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="style_index.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"
-            integrity="sha512-iKDtgDyTHjAitUDdLljGhenhPwrbBfqTKWO1mkhSFH3A7blITC9MhYon6SjnMhp4o0rADGw9yAC6EW4t5a4K3g=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        integrity="sha512-iKDtgDyTHjAitUDdLljGhenhPwrbBfqTKWO1mkhSFH3A7blITC9MhYon6SjnMhp4o0rADGw9yAC6EW4t5a4K3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js"
-            integrity="sha512-1QvjE7BtotQjkq8PxLeF6P46gEpBRXuskzIVgjFpekzFVF4yjRgrQvTG1MTOJ3yQgvTteKAcO7DSZI92+u/yZw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="app.js"></script>
+        integrity="sha512-1QvjE7BtotQjkq8PxLeF6P46gEpBRXuskzIVgjFpekzFVF4yjRgrQvTG1MTOJ3yQgvTteKAcO7DSZI92+u/yZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-<div class="main">
-    <div class="connect_ws">
-        Kết nối tới máy chủ<button onclick="connectWs()">Connect</button>
-    </div>
-    <div class="send_ws">
-        Người nhận:
-        <input type="text" id="to" placeholder="Người nhận" />
-        Tin nhắn:
-        <input type="text" id="message" placeholder="Tin nhắn" />
-        <button onclick="sendWs()">Send</button>
-    </div>
-    <div class="show_ws">
+
+    <div class="main">
+
+        <div class="container">
+            <div class="list_user">
+                <div class="list_user_title">
+                    <b class="username_now">Nguyễn Văn Hoàng</b>
+                    <button id="logout" onclick="logout()">Logout</button>
+                </div>
+                <br>
+                <b>Người dùng Online:</b>
+                <div class="list_user_search">
+                    <input type="text" id="list_user_search" placeholder="Search user">
+                    <button id="list_user_search_button">Search</button>
+                </div>
+                <div class="line_dark"></div>
+                <div class="list_user_content">
+                    <div class="user" id="1" onclick="setToUser(1)">
+                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar">
+                        <p>Người dùng mẫu</p>
+                        <div class="status_color_on"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat">
+                <div class="tools">
+                    <div class="profile">
+                        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="avatar">
+                        <p class="username_room">Hãy chọn người dùng</p>
+                    </div>
+                    <div class="icon_tools">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-exclamation-lg" viewBox="0 0 16 16">
+                            <path
+                                d="M7.005 3.1a1 1 0 1 1 1.99 0l-.388 6.35a.61.61 0 0 1-1.214 0zM7 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="line_dark"></div>
+                <div class="chat_message">
+
+                </div>
+                <div class="chat_send">
+                    <input type="text" id="chat_send_message" placeholder="Type a message">
+                    <button id="chat_send_button" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
 
     </div>
-</div>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
